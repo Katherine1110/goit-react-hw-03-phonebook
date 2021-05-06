@@ -13,7 +13,7 @@ class Phonebook extends Component {
   };
 
   formSubmitHandler = (data) => {
-    console.log(data);
+    // console.log(data);
   };
 
   handleBtnClick = ({ name, number }) => {
@@ -45,7 +45,7 @@ class Phonebook extends Component {
 
   changeFilter = (e) => {
     this.setState({ filter: e.currentTarget.value });
-    console.log(e);
+    // console.log(e);
   };
 
   getFilteredItems = () => {
@@ -61,7 +61,9 @@ class Phonebook extends Component {
     const localContacts = localStorage.getItem("contacts");
     const parsedContacts = JSON.parse(localContacts);
 
-    this.setState({ contacts: parsedContacts });
+    if (parsedContacts) {
+      this.setState({ contacts: parsedContacts });
+    }
   }
 
   componentDidUpdate(prevState) {
@@ -69,6 +71,7 @@ class Phonebook extends Component {
       localStorage.setItem("contacts", JSON.stringify(this.state.contacts));
     }
   }
+
   render() {
     const { filter } = this.state;
     const filteredContacts = this.getFilteredItems();
