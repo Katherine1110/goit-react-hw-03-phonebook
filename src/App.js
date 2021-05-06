@@ -57,6 +57,18 @@ class Phonebook extends Component {
     );
   };
 
+  componentDidMount() {
+    const localContacts = localStorage.getItem("contacts");
+    const parsedContacts = JSON.parse(localContacts);
+
+    this.setState({ contacts: parsedContacts });
+  }
+
+  componentDidUpdate(prevState) {
+    if (this.state.contacts !== prevState.contacts) {
+      localStorage.setItem("contacts", JSON.stringify(this.state.contacts));
+    }
+  }
   render() {
     const { filter } = this.state;
     const filteredContacts = this.getFilteredItems();
