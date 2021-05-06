@@ -1,0 +1,9 @@
+.filterLabel {
+  font-size: large;
+  font-weight: 500;
+  color: rgb(88, 84, 84);
+}
+
+.filterInput {
+  margin-top: 5px;
+}

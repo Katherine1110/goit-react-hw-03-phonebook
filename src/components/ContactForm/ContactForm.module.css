@@ -1,0 +1,28 @@
+label,
+input {
+  display: block;
+}
+
+.contactsForm {
+  border: 2px solid rgb(88, 84, 84);
+  width: max-content;
+  padding: 15px 300px 15px 15px;
+}
+.nameInput,
+.numberInput {
+  margin-top: 15px;
+  margin-bottom: 30px;
+}
+
+.nameLabel,
+.numberLabel {
+  font-size: large;
+  font-weight: 500;
+  color: rgb(88, 84, 84);
+}
+
+.addingBatton {
+  border-radius: 5px;
+  border: 1px solid rgb(133, 133, 133);
+  background-color: #fff;
+}
